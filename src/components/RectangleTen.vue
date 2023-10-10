@@ -1,7 +1,7 @@
 <template>
     <div :class="['rectangle-10', className]">
       <div class="text-wrapper-7">Passenger</div>
-      <div class="text-wrapper-8">michael mcmahon</div>
+      <div class="text-wrapper-8">Johnathan Mondeo</div>
     </div>
   </template>
   

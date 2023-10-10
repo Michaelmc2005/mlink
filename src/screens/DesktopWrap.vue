@@ -12,23 +12,25 @@
       <RectangleTwelve class="rectangle-12-instance" />
       <div class="rectangle-3" />
       <div class="overlap-2">
-        <div class="text-wrapper-11">19</div>
+        <div class="text-wrapper-11">{{ days }}</div>
       </div>
       <div class="overlap-3">
-        <div class="text-wrapper-11">14</div>
+        <div class="text-wrapper-11">{{ minutes }}</div>
       </div>
       <p class="text-wrapper-12">Activated on Tue 10 Oct 2023 at 8:23</p>
       <div class="text-wrapper-13">Days</div>
       <div class="text-wrapper-14">Hours</div>
       <RectangleTen class="rectangle-10-instance" />
       <div class="text-wrapper-15">Minutes</div>
-      <div class="text-wrapper-16">Seconds</div>
       <div class="overlap-4">
-        <div class="text-wrapper-17">15</div>
+        <div class="text-wrapper-17">{{ seconds }}</div>
       </div>
+      <div class="text-wrapper-16">Seconds</div>
+      
     </div>
   </div>
 </template>
+
 
 <script>
 import RectangleComp from "../components/RectangleComp.vue";
@@ -39,7 +41,7 @@ import RectangleWrapper from "../components/RectangleWrapper.vue";
 import DivWrapper from "../components/DivWrapper.vue";
 
 export default {
-  name: "#DesktopWrap",
+  name: "DesktopWrap",
   components: {
     RectangleComp,
     RectangleTen,
@@ -47,6 +49,37 @@ export default {
     RectangleTwelve,
     RectangleWrapper,
     DivWrapper,
+  },
+  data() {
+    return {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    };
+  },
+  mounted() {
+    // Set the date we're counting down to
+    const countDownDate = new Date("Oct 17, 2023 15:37:25").getTime();
+
+    // Update the countdown every 1 second
+    const x = setInterval(() => {
+      const now = new Date().getTime();
+
+      // Find the distance between now and the countdown date
+      const distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // If the countdown is over, clear the interval
+      if (distance < 0) {
+        clearInterval(x);
+      }
+    }, 1000);
   },
 };
 </script>
@@ -167,7 +200,7 @@ export default {
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 3px;
+  top: 7px;
   width: 50px;
 }
 
@@ -278,7 +311,11 @@ export default {
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 3px;
+  top: 7px;
   width: 50px;
 }
+.rectangle-2 {
+  position: relative;
+}
+
 </style>
