@@ -85,13 +85,15 @@ export default {
 </script>
 
 <style>
+body{
+  transform: scale(0.8);
+}
 .desktop {
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  transform: scale(0.75);
 }
 
 .desktop .div-2 {
