@@ -31,12 +31,12 @@
 </template>
 
 <script>
-import RectangleComp from "mlink/src/components/RectangleComp.vue";
-import RectangleTen from "mlink/src/components/RectangleTen.vue";
-import RectangleEleven from "mlink/src/components/RectangleEleven.vue";
-import RectangleTwelve from "mlink/src/components/RectangleTwelve.vue";
-import RectangleWrapper from "mlink/src/components/RectangleWrapper.vue";
-import DivWrapper from "mlink/src/components/DivWrapper.vue";
+import RectangleComp from "..RectangleComp.vue";
+import RectangleTen from "..RectangleTen.vue";
+import RectangleEleven from "..RectangleEleven.vue";
+import RectangleTwelve from "..RectangleTwelve.vue";
+import RectangleWrapper from "..RectangleWrapper.vue";
+import DivWrapper from "..DivWrapper.vue";
 
 export default {
   name: "#DesktopWrap",
