@@ -91,6 +91,10 @@ export default {
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  position: fixed;
+  transform: scale(0.75);
+  right: 20%;
+  bottom: 17%;
 }
 
 .desktop .div-2 {
