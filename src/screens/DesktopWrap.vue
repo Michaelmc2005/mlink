@@ -89,19 +89,21 @@ body{
   transform: scale(0.8);
 }
 .desktop {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 200%;
 }
-
 .desktop .div-2 {
-  background-color: #ffffff;
-  height: 942px;
-  overflow: hidden;
-  position: relative;
-  width: 516px;
+    transform-origin: top left;
+    background-color: #ffffff;
+    height: 942px;
+    overflow: hidden;
+    position: relative;
+    width: 516px;
+    left: -186px;
+    bottom: 62px;
 }
 
 .desktop .overlap {
